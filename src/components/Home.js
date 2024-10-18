@@ -211,7 +211,7 @@ export default function Home() {
             <div className='py-3'>
                 <div className='container background_box_mini p-5 mb-5'>
                     <a href={`/titles/${number.id}`}>
-                        <img id={number.url} className='smaller_img' src={`../../photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
+                        <img id={number.url} className='smaller_img' src={`/photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
                     </a>
                     <p className='main_text py-3 pt-5 m-0'>{`${number.memo}`}</p>
                 </div>
@@ -227,7 +227,7 @@ export default function Home() {
             <div className='py-3'>
                 <div className='container row align-items-start background_box p-5 mb-5'>
                     <a href={`/titles/${number.id}`} className='col'>
-                        <img id={number.url} className='smaller_img' src={`../../photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
+                        <img id={number.url} className='smaller_img' src={`/photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
                     </a>
                     <p className='col m-auto main_text'>{number.memo}</p>
                 </div>
@@ -243,7 +243,7 @@ export default function Home() {
                 <div className='container row align-items-start background_box p-5 mb-5'>
                     <p className='col m-auto main_text'>{number.memo}</p>
                     <a href={`/titles/${number.id}`} className='col'>
-                        <img id={number.url} className='smaller_img' src={`../../photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
+                        <img id={number.url} className='smaller_img' src={`/photos/titles/${number.url}_mini.jpg`} alt={`a movie poster for ${number.title}`} />
                     </a>
                 </div>
             </div>
@@ -261,7 +261,7 @@ export default function Home() {
                         <div className='container background_box_mini p-5 mb-5'>
                             <div>
                                 <a href={`/titles/${first.id}`}>
-                                    <img id={first.url} className='smaller_img' src={`../../photos/titles/${first.url}_mini.jpg`} alt={`a movie poster for ${first.title}`} />
+                                    <img id={first.url} className='smaller_img' src={`/photos/titles/${first.url}_mini.jpg`} alt={`a movie poster for ${first.title}`} />
                                 </a>
                                 <p className='main_text py-3 pt-5 m-0'>{first.memo}</p>
 
@@ -288,7 +288,7 @@ export default function Home() {
                         <div className='container row align-items-start background_box p-5 mb-5'>
 
                             <a href={`/titles/${first.id}`} className='col'>
-                                <img id={first.url} className='smaller_img animate' src={`../../photos/titles/${first.url}_mini.jpg`} alt={`a movie poster for ${first.title}`} />
+                                <img id={first.url} className='smaller_img animate' src={`/photos/titles/${first.url}_mini.jpg`} alt={`a movie poster for ${first.title}`} />
                             </a>
                             <p className='col m-auto animate main_text'>{first.memo}</p>
                         </div>
@@ -297,7 +297,7 @@ export default function Home() {
                         <div className='container row align-items-start background_box p-5 mb-5'>
                             <p className='col m-auto animate main_text'>{second.memo}</p>
                             <a href={`/titles/${second.id}`} className='col'>
-                                <img id={second.url} className='smaller_img animate' src={`../../photos/titles/${second.url}_mini.jpg`} alt={`a movie poster for ${second.title}`} />
+                                <img id={second.url} className='smaller_img animate' src={`/photos/titles/${second.url}_mini.jpg`} alt={`a movie poster for ${second.title}`} />
                             </a>
                         </div>
                     </div>

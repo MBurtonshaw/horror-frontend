@@ -378,7 +378,7 @@ button {
 
 
   body:after {
-    background-image: url('../../client/public/photos/background_mini.jpg');
+    background-image: url('../public/photos/background_mini.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
