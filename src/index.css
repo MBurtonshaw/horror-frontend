@@ -1,0 +1,400 @@
+/*******************************************************************************************
+                                    MAIN
+*******************************************************************************************/
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover; /* Use 'cover' to ensure the image covers the whole background */
+  background-position: center; /* Center the background image */
+  background-image: url('../public/photos/background.jpg');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  text-align: center;
+  font-family: 'Signika Negative', sans-serif;
+  text-shadow: 1px 1px 2px black;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  background: url('../public/photos/background.jpg') no-repeat 50% 50%;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(138, 226, 175);
+  font-size: 1.1em;
+
+}
+
+a:hover {
+  color: rgb(220, 147, 175);
+  text-shadow: 2px 2px 4px black;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  vertical-align: middle;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: 1px solid rgb(14, 26, 19);
+  background-color: rgb(199, 206, 202);
+}
+
+#footer {
+  background-color: none;
+}
+
+#searchBar {
+  border: 1px solid rgb(14, 26, 19);
+  background-color: rgb(238, 238, 238);
+}
+
+/*******************************************************************************************
+                                    CLASSES
+*******************************************************************************************/
+
+.accordion-body {
+  color: lightgray;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, .125);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: black;
+  background-image: linear-gradient(rgb(42, 8, 8), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(42, 8, 8), black);
+  color: rgb(92, 200, 137);
+  text-shadow: 2px 2px black;
+  box-shadow: none;
+}
+
+.accordion-button:is(.collapsed) {
+  background-image: linear-gradient(black, black, rgb(57, 12, 12));
+  color: rgb(92, 200, 137);
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-header {
+  background-color: rgb(57, 12, 12);
+  border-radius: 90%;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.accordion-item {
+  background-image: linear-gradient(black, black, rgb(20, 20, 20), black);
+}
+
+.alert {
+  width: 90%;
+  margin: auto;
+}
+
+.background_box {
+  background-color: rgba(8, 15, 11, 0.5);
+  border-style: solid;
+  border-color: rgba(8, 15, 11, 0.7);
+  border-width: 1px;
+  padding: 1em;
+}
+
+.background_box_mini {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-style: solid;
+  border-color: rgba(8, 15, 11, 0.7);
+  border-width: 1px;
+  padding: 1em;
+}
+
+.card {
+  background-color: rgb(0, 0, 0, 0);
+}
+
+.card-body {
+  background-image: linear-gradient(black, black, black, rgb(42, 8, 8), rgb(57, 12, 12), rgb(42, 8, 8), black, black, black, black);
+}
+
+.card-group {
+  background-color: black;
+  margin-bottom: 5em;
+}
+
+.curtain {
+  background-image: linear-gradient(rgba(42, 8, 8, 0.1), rgba(42, 8, 8, 0.5), rgb(42, 8, 8), rgb(50, 10, 10), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(73, 16, 16), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(57, 12, 12), rgb(50, 10, 10), rgba(42, 8, 8, 0.5), rgba(42, 8, 8, 0.1));
+  padding: 0.25em;
+}
+
+.blur {
+  background-color: black;
+  box-shadow: 0 0 5px 10px black;
+}
+
+.curtain_2 {
+  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), black, black, black, black, black, black, black, black, black, rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
+  padding: 0.25em;
+}
+
+.curtain_div {
+  background-image: linear-gradient(rgba(8, 15, 11, 0.05), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.5), black, black, black, black, black, black, black, black, black, rgba(8, 15, 11, 0.5), rgba(8, 15, 11, 0.2), rgba(8, 15, 11, 0.05));
+}
+
+.decades_loader {
+  min-height: 30em;
+}
+
+.dropdown-menu {
+  background-color: black;
+}
+
+.flashcard {
+  opacity: 0;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+}
+
+.flashcard.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.genre_loader {
+  min-height: 20em;
+}
+
+.header-nav a {
+  color: rgb(152, 248, 192);
+  font-size: 1.2em;
+}
+
+.home_filler {
+  min-height: 25em;
+}
+
+.lg_socials {
+  width: 50%;
+}
+
+.list-group {
+  background: transparent;
+}
+
+.list-group-item {
+  background: transparent;
+}
+
+.main_text {
+  letter-spacing: .5px;
+  word-spacing: 3px;
+}
+
+.nav {
+  background: transparent;
+}
+
+.nav-item {
+  background: transparent;
+}
+
+.nav-link:hover {
+  color: rgb(220, 147, 175);
+  text-shadow: 2px 2px 4px black;
+}
+
+.nonChalant {
+  color: white;
+}
+
+.purple {
+  color: rgb(206, 119, 206);
+}
+
+.smaller_img {
+  max-width: 50%;
+  max-height: auto;
+  opacity: 90%;
+  border: 1px solid rgb(138, 226, 175);
+}
+
+.smaller_img:hover {
+  opacity: 100%;
+}
+
+.xxxs_socials {
+  min-width: 45%;
+  max-width: 50%;
+}
+
+.xxs_socials {
+  min-width: 40%;
+  max-width: 45%;
+}
+
+.xs_socials {
+  min-width: 35%;
+  max-width: 40%;
+}
+
+.xl_socials {
+  min-width: 30%;
+  max-width: 35%;
+}
+
+.lg_socials {
+  min-width: 38%;
+  max-width: 43%;
+}
+
+.md_socials {
+  min-width: 22%;
+  max-width: 27%;
+}
+
+.sm_socials {
+  min-width: 30%;
+  max-width: 35%;
+}
+
+.socials {
+  min-width: 25%;
+  max-width: 30%;
+}
+
+.thinner {
+  text-shadow: none;
+}
+
+.title_filler_lg {
+  min-height: 35em;
+  max-width: 40em;
+  margin: auto;
+}
+
+.title_filler_sm_tall {
+  height: 30em;
+  width: 20em;
+  margin: auto;
+}
+
+.title_filler_sm_wide {
+  height: 250px;
+  width: 95%;
+  margin: auto;
+  margin-top: 2em;
+}
+
+.transparent {
+  opacity: 75%;
+}
+
+.transparent:hover {
+  opacity: 100%;
+}
+
+.undercover {
+  text-shadow: none;
+  color: white;
+}
+
+/*******************************************************************************************
+                                    ANIMATION
+*******************************************************************************************/
+
+.fly_left {
+  animation: fly-left ease-in-out .7s forwards;
+}
+
+@keyframes fly-left {
+  from {
+    transform: translateX(35vw);
+  }
+
+  to {
+    transform: translateX(0vw);
+  }
+}
+
+.fly_up {
+  animation: fly-up ease-in-out .7s forwards;
+}
+
+@keyframes fly-up {
+  from {
+    transform: translateY(50vh);
+  }
+
+  to {
+    transform: translateY(0vh);
+  }
+}
+
+.animate {
+  animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+
+
+  body:after {
+    background-image: url('../../client/public/photos/background_mini.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .title_load_filler {
+    min-height: 25em;
+  }
+
+  span:hover {
+    color: pink;
+  }
+
+  a {
+    color: rgb(232, 143, 143);
+  }
+
+}
