@@ -296,16 +296,17 @@ export default function Title() {
     }
 
     function cookie_handler() {
-        if (data.currentUser === '' || data.currentUser === undefined) {
+        // Check if currentUser is defined and not null
+        const currentUser = data.currentUser || {};
+    
+        if (!currentUser.email) {
             return (
                 <div>
                     <h1 className='mt-5 mb-5 pt-4 center'><a href='/titles' className='nonChalant'>{movie.title}</a></h1>
                 </div>
             );
         } else {
-            if (isChecked === true ||
-                Cookies.get(`myList-${data.currentUser.email}-${movie.movie_id}`)
-            ) {
+            if (isChecked || Cookies.get(`myList-${currentUser.email}-${movie.movie_id}`)) {
                 return (
                     <div>
                         <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{movie.title}</a></h1>
@@ -317,9 +318,8 @@ export default function Title() {
                     <div>
                         <h1 className='mt-5 mb-2 pt-4 center'><a href='/titles' className='nonChalant'>{movie.title}</a></h1>
                         <button className='mb-5 px-4' onClick={() => {
-                            //needs logic to determine what to do when cookie doesn't exist yet
-                            Cookies.set(`myList-${data.currentUser.email}-${movie.movie_id}`, `${movie.title}`, { expires: 7 });
-                            actions.addMovie(data.currentUser.user_id, movie.movie_id);
+                            Cookies.set(`myList-${currentUser.email}-${movie.movie_id}`, `${movie.title}`, { expires: 7 });
+                            actions.addMovie(currentUser.user_id, movie.movie_id);
                             setIsChecked(true);
                         }}>Add to My List</button>
                     </div>
