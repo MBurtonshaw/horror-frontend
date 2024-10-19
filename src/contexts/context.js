@@ -87,19 +87,8 @@ export function Provider({ children }) {
     }
   };
 
-  const getMoviesBySeason = async () => {
-    let season;
-    const setter = new Date();
-    const month = setter.getMonth() + 1;
-    if (month === 9 || month === 10 || month === 11) {
-      season = 'Fall';
-    } else if (month === 12 || month === 1 || month === 2) {
-      season = 'Winter';
-    } else if (month === 3 || month === 4 || month === 5) {
-      season = 'Spring';
-    } else {
-      season = 'Summer';
-    }
+  const getMoviesBySeason = async (season) => {
+    console.log(season)
     try {
       let response = await data.getMoviesBySeason(season);
       setMovies(response);
