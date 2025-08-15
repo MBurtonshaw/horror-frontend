@@ -59,7 +59,7 @@ export default function Genres() {
                 <div className="card animate">
                     <a href={`/genres/${genreName}`}>
                         <img
-                            src={`../../photos/genres/${genreName}.jpg`}
+                            src={`../../photos/genres/${genreName.toLowerCase()}.jpg`}
                             className="card-img-top"
                             alt={genreName}
                             onError={(e) => e.target.src = '../../photos/genres/placeholder.jpg'} // Handle missing images
