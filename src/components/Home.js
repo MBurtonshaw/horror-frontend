@@ -34,26 +34,28 @@ export default function Home() {
     // Fetch movies data
     const fetchMovies = async () => {
         if (season) {
-        try {
-            // Call the action to get movies
-            await actions.getMoviesBySeason(season); // This will fetch and update the movies in the context
-            // Access the updated movies from context
-            setMovies(data.movies);
-        } catch (err) {
-            // Handle errors
-            setError(err);
-        } finally {
-            // Set loading to false regardless of success or failure
-            setLoading(false);
+            try {
+                const fetched = await actions.getMoviesBySeason(season);
+                setMovies(fetched);
+            } catch (err) {
+                // Handle errors
+                setError(err);
+            } finally {
+                // Set loading to false regardless of success or failure
+                setLoading(false);
+            }
         }
-    }
     };
 
     useEffect(() => {
-        if (movies.length < 1) {
-            fetchMovies();
-        }
-    }, [actions, data.movies]); // Dependencies to re-run the effect if actions or data.movies change
+    if (!season) return; // Do nothing if season is empty string
+
+    setLoading(true);
+    actions.getMoviesBySeason(season)
+        .then((fetched) => setMovies(fetched))
+        .catch(setError)
+        .finally(() => setLoading(false));
+}, [season]); 
 
     if (loading) {
         return <Loading />; // Render a loading state

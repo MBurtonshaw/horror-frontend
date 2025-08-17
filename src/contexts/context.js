@@ -87,15 +87,16 @@ export function Provider({ children }) {
     }
   };
 
-  const getMoviesBySeason = async (season) => {
-    console.log(season)
-    try {
-      let response = await data.getMoviesBySeason(season);
-      setMovies(response);
-    } catch (error) {
-      setError(error);
-    }
+const getMoviesBySeason = async (season) => {
+  try {
+    let response = await data.getMoviesBySeason(season);
+    setMovies(response);
+    return response; // ✅ return freshly fetched data
+  } catch (error) {
+    setError(error);
+    throw error;
   }
+};
 
   const getMoviesByGenre = async (genre) => {
     try {
